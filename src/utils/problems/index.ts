@@ -7,7 +7,7 @@ import { validParentheses } from "./valid-parentheses";
 import { containerWithMostWater } from "./container-with-most-water";
 import { mergeIntervals } from "./merge-intervals";
 import { bestTimeToBuyAndSellStock } from "./best-time-to-buy-and-sell-stock";
-
+import { subsets } from "./subsets";
 
 interface ProblemMap {
 	[key: string]: Problem;
@@ -22,4 +22,5 @@ export const problems: ProblemMap = {
 	"container-with-most-water": containerWithMostWater,
 	"merge-intervals": mergeIntervals,
 	"best-time-to-buy-and-sell-stock": bestTimeToBuyAndSellStock,
+	"subsets":subsets,
 };

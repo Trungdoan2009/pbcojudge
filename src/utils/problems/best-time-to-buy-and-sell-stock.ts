@@ -47,7 +47,7 @@ const handlerBestTime = (fn: any) => {
 
 export const bestTimeToBuyAndSellStock: Problem = {
     id: "best-time-to-buy-and-sell-stock",
-    title: "1. Best Time to Buy and Sell Stock",
+    title: "8. Best Time to Buy and Sell Stock",
     problemStatement: `<p class='mt-3'>
   You are given an array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i</code>th day.
   You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
