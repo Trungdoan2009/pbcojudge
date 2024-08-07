@@ -60,10 +60,10 @@ export const subsets: Problem = {
     id: "subsets",
     title: "9. Subsets",
     problemStatement: `<p class='mt-3'>
-  Given an integer array <code>nums</code> of unique elements, return all possible subsets (the power set).
+  Cho một mảng số nguyên <code>nums</code> chứa các phần tử duy nhất, trả về tất cả các tập con có thể có (tập hợp mũ).
 </p>
 <p class='mt-3'>
-  The solution set must not contain duplicate subsets. Return the solution in any order.
+  Tập hợp kết quả không được chứa các tập con trùng nhau. Trả về kết quả theo bất kỳ thứ tự nào.
 </p>`,
     examples: [
         {

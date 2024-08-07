@@ -49,25 +49,26 @@ export const bestTimeToBuyAndSellStock: Problem = {
     id: "best-time-to-buy-and-sell-stock",
     title: "8. Best Time to Buy and Sell Stock",
     problemStatement: `<p class='mt-3'>
-  You are given an array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i</code>th day.
-  You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
-  Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+Bạn được cung cấp một mảng <code>prices</code> trong đó <code>prices[i]</code> là giá của một cổ phiếu vào ngày thứ <code>i</code>.
+Bạn muốn tối đa hóa lợi nhuận bằng cách chọn một ngày để mua một cổ phiếu và chọn một ngày khác trong tương lai để bán cổ phiếu đó.
+Trả về lợi nhuận tối đa mà bạn có thể đạt được từ giao dịch này. Nếu bạn không thể đạt được bất kỳ lợi nhuận nào, trả về 0.
+
 </p>
 <p class='mt-3'>
-  Note that you must buy before you sell.
+  Lưu ý rằng bạn phải mua trước khi bán.
 </p>`,
     examples: [
         {
             id: 1,
             inputText: "prices = [7,1,5,3,6,4]",
             outputText: "5",
-            explanation: "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5.",
+            explanation: "Mua vào day 2 (price = 1) và bán vào day 5 (price = 6), lợi nhuận = 6 - 1 = 5.",
         },
         {
             id: 2,
             inputText: "prices = [7,6,4,3,1]",
             outputText: "0",
-            explanation: "In this case, no transactions are done and the max profit = 0.",
+            explanation: "Trong trường hợp này không có giao diện nào được thực hiện và lợi nhuận lớn nhất = 0.",
         }
     ],
     constraints: `<li class='mt-2'>

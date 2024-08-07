@@ -38,8 +38,8 @@ export const mergeIntervals: Problem = {
     id: "merge-intervals",
     title: "56. Merge Intervals",
     problemStatement: `<p class='mt-3'>
-        Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals and return an array of the non-overlapping intervals that cover all the intervals in the input.
-    </p>`,
+  Cho một mảng các khoảng thời gian trong đó intervals[i] = [starti, endi], hợp nhất tất cả các khoảng thời gian chồng lấn nhau và trả về một mảng các khoảng thời gian không chồng lấn nhau mà bao phủ tất cả các khoảng thời gian đầu vào.
+</p>`,
     examples: [
         {
             id: 1,
