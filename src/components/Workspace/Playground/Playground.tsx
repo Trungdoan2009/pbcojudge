@@ -83,14 +83,13 @@ const Playground: React.FC<PlaygroundProps> = ({ problem, setSuccess, setSolved 
             }
         } catch (error: any) {
             console.log(error.message);
-            const et='Bạn đã bị sai testcases';
             if (error.message.startsWith("Sai testcase")) {
-                toast.error(error.message, et ,  {
+                toast.error(error.message+ 'sai testcases',  {
                     position: "top-center",
                     autoClose: 3000,
                 });
             } else {
-                toast.error(error.message, {
+                toast.error(error.message + 'sai testcases', {
                     position: "top-center",
                     autoClose: 3000,
                 });
