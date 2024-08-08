@@ -56,21 +56,13 @@ const Playground: React.FC<PlaygroundProps> = ({ problem, setSuccess, setSolved 
             });
             return;
         }
-
         try {
-            // Ensure the userCode starts with the function declaration
             userCode = userCode.slice(userCode.indexOf(problem.starterFunctionName));
-            console.log("Sliced userCode:", userCode);
-
             const cb = new Function(`return ${userCode}`)();
-            const handler = problems[pid as string]?.handlerFunction;
-
-            console.log("Handler function:", handler);
+            const handler = problems[pid as string].handlerFunction;
 
             if (typeof handler === "function") {
                 const success = handler(cb);
-                console.log("Test case success:", success);
-
                 if (success) {
                     toast.success("Passed all test cases", {
                         position: "top-center",
@@ -88,15 +80,20 @@ const Playground: React.FC<PlaygroundProps> = ({ problem, setSuccess, setSolved 
                     });
                     setSolved(true);
                 }
-            } else {
-                throw new Error("Handler function is not defined or is not a function");
             }
         } catch (error: any) {
-            console.error("Error during submission:", error.message);
-            toast.error(error.message, {
-                position: "top-center",
-                autoClose: 3000,
-            });
+            console.log(error.message);
+            if (error.message.startsWith("Sai testcase")) {
+                toast.error("sai testcase" + error.message, {
+                    position: "top-center",
+                    autoClose: 3000,
+                });
+            } else {
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 3000,
+                });
+            }
         }
     };
 
@@ -138,7 +135,7 @@ const Playground: React.FC<PlaygroundProps> = ({ problem, setSuccess, setSolved 
                     </div>
                     <div className="flex">
                         {problem.examples.map((example, index) => (
-                            <div className='mr-2 items-start mt-2' key={example.id} onClick={() => setActiveTestCaseId(index)}>
+                            <div className='mr-2 items-start mt-2 ' key={example.id} onClick={() => setActiveTestCaseId(index)}>
                                 <div className='flex flex-wrap items-center gap-y-4'>
                                     <div className={`font-medium items-center transition-all focus:outline-none inline-flex bg-gray-200
                                         hover:bg-gray-100 relative rounded-lg px-4 py-1 cursor-pointer whitespace-nowrap shadow-sm ${activeTestCaseId === index ? "text-dark-blue-s" : "text-gray-800"}
@@ -152,11 +149,11 @@ const Playground: React.FC<PlaygroundProps> = ({ problem, setSuccess, setSolved 
                     <div className='font-semibold'>
                         <p className='text-sm font-medium mt-4 text-dark-blue-s'>Input:</p>
                         <div className='w-full cursor-text rounded-lg border px-3 py-[10px] bg-gray-200 border-transparent text-dark-blue-s mt-2 shadow-inner'>
-                            {problem.examples[activeTestCaseId]?.inputText}
+                            {problem.examples[activeTestCaseId].inputText}
                         </div>
                         <p className='text-sm font-medium mt-4 text-dark-blue-s'>Output:</p>
                         <div className='w-full cursor-text rounded-lg border px-3 py-[10px] bg-gray-200 border-transparent text-dark-blue-s mt-2 mb-12 shadow-inner'>
-                            {problem.examples[activeTestCaseId]?.outputText}
+                            {problem.examples[activeTestCaseId].outputText}
                         </div>
                     </div>
                     <div>
