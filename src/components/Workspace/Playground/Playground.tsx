@@ -84,7 +84,7 @@ const Playground: React.FC<PlaygroundProps> = ({ problem, setSuccess, setSolved 
         } catch (error: any) {
             console.log(error.message);
             if (error.message.startsWith("AssertionError")) {
-                toast.error("One or more test cases failed", {
+                toast.error(error.message, {
                     position: "top-center",
                     autoClose: 3000,
                 });
